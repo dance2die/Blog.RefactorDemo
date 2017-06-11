@@ -22,9 +22,17 @@ namespace Blog.RefactorDemo
 			Console.WriteLine("Result of GetIndexAfterFoundWord3 = " + nextIndex);
 
 			nextIndex = GetIndexAfterFoundWord4(text, searchWord, new KmpSearch());
-			Console.WriteLine("Result of GetIndexAfterFoundWord4 using KmpSearch  = " + nextIndex);
+			Console.WriteLine("Result of GetIndexAfterFoundWord4 using KmpSearch1  = " + nextIndex);
 			nextIndex = GetIndexAfterFoundWord4(text, searchWord, new SlowSearch());
-			Console.WriteLine("Result of GetIndexAfterFoundWord4 using SlowSearch = " + nextIndex);
+			Console.WriteLine("Result of GetIndexAfterFoundWord4 using SlowSearch1 = " + nextIndex);
+
+			IndexIterator kmpIterator = new IndexIterator(new KmpSearch());
+			nextIndex = kmpIterator.GetIndexAfterFoundWord(text, searchWord);
+			Console.WriteLine("Result of GetIndexAfterFoundWord4 using KmpSearch2  = " + nextIndex);
+
+			IndexIterator slowIterator = new IndexIterator(new SlowSearch());
+			nextIndex = slowIterator.GetIndexAfterFoundWord(text, searchWord);
+			Console.WriteLine("Result of GetIndexAfterFoundWord4 using SlowSearch2  = " + nextIndex);
 		}
 
 		private static int GetIndexAfterFoundWord4(string text, string searchWord, ITextSearch textSearch)

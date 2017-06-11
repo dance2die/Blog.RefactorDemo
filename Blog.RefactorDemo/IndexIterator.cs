@@ -11,7 +11,7 @@ namespace Blog.RefactorDemo
 			_textSearch = textSearch;
 		}
 
-		public int GetIndexAfterFoundWord4(string text, string searchWord)
+		public int GetIndexAfterFoundWord(string text, string searchWord)
 		{
 			int[] found = _textSearch.Find(text, searchWord);
 			return found.First() + searchWord.Length;
