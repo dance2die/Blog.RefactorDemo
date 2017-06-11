@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IndexIterator.cs" />
+    <Compile Include="ITextSearch.cs" />
+    <Compile Include="KmpSearch.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SlowSearch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
